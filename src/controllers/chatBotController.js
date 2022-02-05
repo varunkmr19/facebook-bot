@@ -23,11 +23,6 @@ const postWebHook = (req, res) => {
       // pass the event to the appropriate handler function
       if (webhook_event.message) {
           handleMessage(sender_psid, webhook_event.message);
-      } else {
-        resObj = {
-          "text": 'Invalid message type: Only text messages are supported.'
-        } 
-        handleMessage(sender_psid, resObj);
       }
     });
 
